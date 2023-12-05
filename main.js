@@ -200,17 +200,24 @@ secondo array gli id dei post ai quali abbiamo messo il like. */
 const likesCtaList = document.querySelectorAll(".likes__cta");
 let likedPosts = [];
 //il like button cambia colore
-likesCtaList.forEach(likesCta => {
-    likesCta.addEventListener("click", () => {
+
+
+likesCtaList.forEach(function(likesCta, index) {
+    likesCta.addEventListener("click", function() {
         const likeButton = likesCta.querySelector(".like-button");
-        console.log(likeButton); 
+        //console.log(likeButton); 
         
         if (likeButton) {
-            likeButton.classList.toggle("like-button--liked");
+            likeButton.classList.add("like-button--liked");
+            posts[index].likes++;
+            
+            const postContainer = likesCta.closest('.post');
+            const likesCounter = postContainer.querySelector('.js-likes-counter');
+            likesCounter.textContent = `Piace a ${posts[index].likes} persone`;
+            likedPosts.push(posts[index].id);
+            console.log("post a cui hai messo like: ", likedPosts); 
         }
 
 });
 });
 
-   
-//il conto dei likes aumenta
