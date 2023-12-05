@@ -177,12 +177,20 @@ posts.forEach(post => {
         postFooter.appendChild(likes);
 
 
+    // Appendo tutti i principali
+    postElement.appendChild(postHeader);
+    postElement.appendChild(postText);
+    postElement.appendChild(postImage);
+    postElement.appendChild(postFooter);
+
+    // Appendo il post nella sua totalità al container
+    container.appendChild(postElement);
 });
 
 
 
 
 
-/*Milestone 2 - Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del 
+/* Milestone 2 - Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del 
 bottone e incrementiamo il counter dei likes relativo. Salviamo in un
-secondo array gli id dei post ai quali abbiamo messo il like.*/
+secondo array gli id dei post ai quali abbiamo messo il like. */
