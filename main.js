@@ -104,7 +104,7 @@ posts.forEach(post => {
                 //post meta time
                 const postMetaTime = document.createElement("div");
                 postMetaTime.classList.add("post-meta__time");
-                postMetaTime.textContent = "4 mesi fa"; 
+                postMetaTime.textContent = "4 mesi fa"; // temporaneo: crea funzione che mi calcoli il tempo effetivo
 
                 postMetaData.appendChild(postMetaAuthor);
                 postMetaData.appendChild(postMetaTime);
@@ -114,8 +114,19 @@ posts.forEach(post => {
 
         postHeader.appendChild(postMeta);
 
+    
+    // Post text
+    const postText = document.createElement("div");
+    postText.classList.add("post__text");
+    postText.textContent = post.content;
+
 
 });
+
+
+
+
+
 /*Milestone 2 - Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del 
 bottone e incrementiamo il counter dei likes relativo. Salviamo in un
 secondo array gli id dei post ai quali abbiamo messo il like.*/
