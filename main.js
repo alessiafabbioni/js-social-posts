@@ -132,6 +132,51 @@ posts.forEach(post => {
 
         postImage.appendChild(img);
 
+    
+    // Post footer + likes
+    const postFooter = document.createElement("div");
+    postFooter.classList.add("post__footer");
+
+        //js likes
+        const likes = document.createElement("div");
+        likes.classList.add("likes", "js-likes");
+
+            //likes cta
+            const likesCta = document.createElement("div");
+            likesCta.classList.add("likes__cta");
+
+                //crea a element
+                const likeButton = document.createElement("a");
+                likeButton.classList.add("like-button", "js-like-button");
+                likeButton.href = "#";
+                likeButton.dataset.postid = post.id;
+
+                    //crea icona
+                    const likeButtonIcon = document.createElement("i");
+                    likeButtonIcon.classList.add("like-button__icon", "fas", "fa-thumbs-up");
+                    likeButtonIcon.setAttribute("aria-hidden", "true");
+
+                    //crea label
+                    const likeButtonLabel = document.createElement("span");
+                    likeButtonLabel.classList.add("like-button__label");
+                    likeButtonLabel.textContent = "Mi Piace";
+
+                    likeButton.appendChild(likeButtonIcon);
+                    likeButton.appendChild(likeButtonLabel);
+
+                likesCta.appendChild(likeButton);
+
+            //likes counter
+            const likesCounter = document.createElement("div");
+            likesCounter.classList.add("likes__counter");
+            likesCounter.innerHTML = `Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone`;
+
+            likes.appendChild(likesCta);
+            likes.appendChild(likesCounter);
+
+        postFooter.appendChild(likes);
+
+
 });
 
 
