@@ -196,5 +196,21 @@ bottone e incrementiamo il counter dei likes relativo. Salviamo in un
 secondo array gli id dei post ai quali abbiamo messo il like. */
 
 //aggiunta di un event listener sul like button
-    //il like button cambia colore
-    //il conto dei likes aumenta
+
+const likesCtaList = document.querySelectorAll(".likes__cta");
+let likedPosts = [];
+//il like button cambia colore
+likesCtaList.forEach(likesCta => {
+    likesCta.addEventListener("click", () => {
+        const likeButton = likesCta.querySelector(".like-button");
+        console.log(likeButton); 
+        
+        if (likeButton) {
+            likeButton.classList.toggle("like-button--liked");
+        }
+
+});
+});
+
+   
+//il conto dei likes aumenta
