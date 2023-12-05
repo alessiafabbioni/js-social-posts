@@ -66,14 +66,53 @@ di oggetti che già trovate. */
 // quindi la prima cosa da fare è appendare tutti gli elementi
 // lo faccio con un for each
 
+posts.forEach(post => {
 
+    //Post
+    const postElement = document.createElement("div");
+    postElement.classList.add("post");
 
+    // Post header
+    const postHeader = document.createElement("div");
+    postHeader.classList.add("post__header");
 
+        //post meta
+        const postMeta = document.createElement("div");
+        postMeta.classList.add("post-meta");
 
+            //post meta icon
+            const postMetaIcon = document.createElement("div");
+            postMetaIcon.classList.add("post-meta__icon");
 
+                //profile-pic
+                const profilePic = document.createElement("img");
+                profilePic.classList.add("profile-pic");
+                profilePic.src = post.author.image || "https://unsplash.it/300/300?image=15";
+                profilePic.alt = post.author.name;
 
+                postMetaIcon.appendChild(profilePic);
 
+            //post meta data
+            const postMetaData = document.createElement("div");
+            postMetaData.classList.add("post-meta__data");
 
+                //post meta author
+                const postMetaAuthor = document.createElement("div");
+                postMetaAuthor.classList.add("post-meta__author");
+                postMetaAuthor.textContent = post.author.name;
+
+                //post meta time
+                const postMetaTime = document.createElement("div");
+                postMetaTime.classList.add("post-meta__time");
+                postMetaTime.textContent = "4 mesi fa"; 
+
+                postMetaData.appendChild(postMetaAuthor);
+                postMetaData.appendChild(postMetaTime);
+
+            postMeta.appendChild(postMetaIcon);
+            postMeta.appendChild(postMetaData);
+
+        postHeader.appendChild(postMeta);
 
 /*Milestone 2 - Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del 
 bottone e incrementiamo il counter dei likes relativo. Salviamo in un
