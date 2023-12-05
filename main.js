@@ -120,6 +120,17 @@ posts.forEach(post => {
     postText.classList.add("post__text");
     postText.textContent = post.content;
 
+    
+    // Post image
+    const postImage = document.createElement("div");
+    postImage.classList.add("post__image");
+
+        //image source
+        const img = document.createElement("img");
+        img.src = post.media;
+        img.alt = "";
+
+        postImage.appendChild(img);
 
 });
 
